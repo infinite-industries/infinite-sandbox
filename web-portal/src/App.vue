@@ -2,7 +2,9 @@
   <div id="app">
     <!-- TODO: nav component with sidebar -->
     <ii-toolbar />
-    <router-view/>
+    <div id="ii-container">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -31,6 +33,19 @@
 
   #ii-container {
     padding-top: 90px;
+  }
+
+  .container {
+    flex: 1 1 100%;
+    margin: auto;
+    padding: 24px;
+    width: 100%;
+  }
+
+  @media only screen and (min-width: 1264px) {
+    .container {
+      max-width: 1185px
+    }
   }
 
   .admin-page,

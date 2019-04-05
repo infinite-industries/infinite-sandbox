@@ -25,6 +25,8 @@
 <style scoped>
   #toolbar {
     position: fixed;
+    top: 0;
+    left: 0;
     z-index: 21;
     height: 85px;
     width: 100%;
