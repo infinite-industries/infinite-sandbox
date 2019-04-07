@@ -1,15 +1,24 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <h1>Infinite Sandbox</h1>
-    <div>Events go here.</div>
-  </div>
+  <ii-list-viewer :calendar-events="events" />
 </template>
 
 <script>
-// @ is an alias to /src
+  // @ is an alias to /src
+  import ListViewer from '@/components/ListViewer.vue'
 
-export default {
-  name: 'home'
-}
+  export default {
+    name: 'home',
+
+    computed: {
+      events () {
+        return this.$store.getters.events || []
+      }
+    },
+    created () {
+      this.$store.dispatch('loadEvents')
+    },
+    components: {
+      'ii-list-viewer': ListViewer
+    }
+  }
 </script>
