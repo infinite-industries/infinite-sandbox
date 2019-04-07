@@ -25,6 +25,12 @@ export default new Router({
       path: '/legal',
       nane: 'legal',
       component: () => import(/* webpackChunkName: "legal" */ './views/Legal.vue')
+    },
+    {
+      path: '/events/:eventId',
+      name: 'event',
+      props: true,
+      component: () => import('./views/Event.vue')
     }
   ]
 })

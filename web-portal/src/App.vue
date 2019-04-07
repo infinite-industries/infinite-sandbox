@@ -49,6 +49,7 @@
   }
 
   .admin-page,
+  .event-page,
   .info-page {
     background: white;
     color: black;

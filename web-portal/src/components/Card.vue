@@ -4,6 +4,9 @@
       <div class="info-container">
         <h3>{{ event.title | truncate(40) }}</h3>
         <p class="description">{{ event.description | truncate(120) }} </p>
+        <div class="actions">
+          <router-link :to="eventRoute">More Info</router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -15,6 +18,11 @@
     props: [
       'event'
     ],
+    computed: {
+      eventRoute () {
+        return this.event && `/events/${this.event.id}`
+      }
+    },
     filters: {
       truncate: function (text, stop, clamp = '...') {
         return text.slice(0, stop) + (stop < text.length ? clamp : '')
@@ -46,7 +54,7 @@
 
   .info-container {
     position: absolute;
-    top: 75px;
+    top: 40px;
     left: 0;
 
     min-height: 115px;
@@ -71,5 +79,21 @@
     padding-right: 12px;
 
     margin-top: 10px;
+  }
+
+  .info-container .actions {
+    position: absolute;
+    bottom: 5px;
+    padding-left: 5px;
+
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+  }
+
+  .info-container .actions a {
+    border-radius: 5px;
+    padding: 7px;
+    color: #ffffff;
+    background-color: #000;
   }
 </style>
