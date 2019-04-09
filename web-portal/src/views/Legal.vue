@@ -43,6 +43,18 @@
   </div>
 </template>
 
+<script>
+  export default {
+    metaInfo: {
+      title: 'Legal',
+      meta: [
+        { 'og:title': 'Legal - Infinite Sandbox' },
+        { 'og:description': 'This is the legal page' }
+      ]
+    }
+  }
+</script>
+
 <style scoped>
   .statement {
     font-weight: bold;

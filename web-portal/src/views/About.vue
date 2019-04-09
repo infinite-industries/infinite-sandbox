@@ -12,3 +12,15 @@
     </p>
   </div>
 </template>
+
+<script>
+  export default {
+    metaInfo: {
+      title: 'About',
+      meta: [
+        { 'og:title': 'About - Infinite Sandbox' },
+        { 'og:description': 'This is the about page' }
+      ]
+    }
+  }
+</script>

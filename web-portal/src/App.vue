@@ -12,6 +12,14 @@
   import Toolbar from '@/components/Toolbar.vue'
 
   export default {
+    metaInfo: {
+      titleTemplate: '%s - Infinite Sandbox',
+      meta: [
+        { 'author': 'infinite industries' },
+        { 'article:publisher': 'https://www.facebook.com/medium' },
+        { 'article:author': 'https://medium.com/@dima_strakovsky' }
+      ]
+    },
     components: {
       'ii-toolbar': Toolbar
     }

@@ -9,6 +9,15 @@
   export default {
     name: 'home',
 
+    metaInfo: {
+      title: 'Infinite Sandbox',
+      titleTemplate: null,
+      meta: [
+        { 'og:title': 'Infinite Sandbox' },
+        { 'og:description': 'This is the home page' }
+      ]
+    },
+
     computed: {
       events () {
         return this.$store.getters.events || []

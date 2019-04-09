@@ -19,7 +19,17 @@
 <script>
   import Loader from '@/components/vectors/Loader'
 
-  export default {
+export default {
+    metaInfo () {
+      return {
+        title: this.LOADING ? 'Loading' : this.event.title,
+        meta: [
+          { 'og:title': this.event.title },
+          { 'og:description': this.event.description },
+          { 'og:image': 'https://picsum.photos/g/600/600' }
+        ]
+      }
+    },
     props: [
       'eventId'
     ],
