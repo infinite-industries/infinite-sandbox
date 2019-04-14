@@ -19,7 +19,7 @@
 <script>
   import Loader from '@/components/vectors/Loader'
 
-export default {
+  export default {
     metaInfo () {
       return {
         title: this.LOADING ? 'Loading' : this.event.title,

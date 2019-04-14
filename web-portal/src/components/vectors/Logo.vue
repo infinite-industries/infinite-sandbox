@@ -41,14 +41,14 @@
 <script>
   export default {
     props: ['width', 'height', 'iconColor'],
-    data: function(){
-      return{
+    data: function () {
+      return {
         //
       }
     },
-    methods:{
-      NavigateTo: function(route_name){
-        window.location=route_name
+    methods: {
+      NavigateTo: function (routeName) {
+        window.location = routeName
       }
     }
   }
