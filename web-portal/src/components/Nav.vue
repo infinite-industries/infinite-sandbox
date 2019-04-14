@@ -19,9 +19,9 @@
       visibleNavItems () {
         // TODO: auth considerations?
         const items = [
-          { title: 'Home', route:'/' },
+          { title: 'Home', route: '/' },
           { title: 'About', route: '/about' },
-          { title: 'Legal', route: '/legal' },
+          { title: 'Legal', route: '/legal' }
         ]
         return items
       }
@@ -40,7 +40,7 @@
         x: this.$el.offsetWidth,
         zIndex: 20
       })
-    },
+    }
   }
 </script>
 
