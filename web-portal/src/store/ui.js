@@ -1,6 +1,8 @@
 
-const state = {
-  sidebarOpen: false
+const state = function () {
+  return {
+    sidebarOpen: false
+  }
 }
 
 const getters = {

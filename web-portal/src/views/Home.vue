@@ -24,7 +24,21 @@
       }
     },
     created () {
-      this.$store.dispatch('loadEvents')
+      // avoid loading events if they have already been loaded server-side
+      // unfortunately, as far as I can tell, there isn't a way to identify
+      // whether this component is hydrating server-rendered markup, so in
+      // order to ensure the list is updated on navigation away and back,
+      // it must be cleared on navigation away (see beforeRouteLeave hook)
+      if (this.events.length === 0) {
+        this.$store.dispatch('loadEvents')
+      }
+    },
+    serverPrefetch () {
+      return this.$store.dispatch('loadEvents')
+    },
+    beforeRouteLeave (to, from, next) {
+      this.$store.dispatch('clearEvents')
+      next()
     },
     components: {
       'ii-list-viewer': ListViewer

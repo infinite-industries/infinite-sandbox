@@ -42,7 +42,16 @@
       }
     },
     created () {
-      this.$store.dispatch('loadEvent', this.eventId)
+      if (!this.event || !this.event.id) {
+        this.$store.dispatch('loadEvent', this.eventId)
+      }
+    },
+    serverPrefetch () {
+      return this.$store.dispatch('loadEvent')
+    },
+    beforeRouteLeave (to, from, next) {
+      this.$store.dispatch('clearEvent')
+      next()
     },
     components: {
       'ii-loader': Loader

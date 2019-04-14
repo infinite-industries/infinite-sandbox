@@ -27,10 +27,12 @@
     },
     mounted () {
       // Adjust the row size
-      this.$nextTick(function () {
-        this.adjustCardSpacing()
-        window.addEventListener('resize', this.adjustCardSpacing)
-      })
+      if (!this.$isServer) {
+        this.$nextTick(function () {
+          this.adjustCardSpacing()
+          window.addEventListener('resize', this.adjustCardSpacing)
+        })
+      }
     },
     beforeDestroy () {
       window.removeEventListener('resize', this.adjustCardSpacing)
@@ -42,7 +44,7 @@
     },
     watch: {
       LOADING (value) {
-        if (value == false) {
+        if (!value && !this.$isServer) {
           this.$nextTick(function () {
             this.adjustCardSpacing()
           })
